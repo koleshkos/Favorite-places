@@ -1,0 +1,11 @@
+<div>
+  <span class="lead">User Info</span><hr/>
+
+  <b>Username:</b> <%= @user.username %><br/>
+
+  <b>Name:</b> <%= @user.name %><br/>
+
+  <b>Sex:</b> <%= @user.sex %><br/>
+
+  <b>Age:</b> <%= Time.now.year - @user.date_of_birth.year %><br/>
+</div>

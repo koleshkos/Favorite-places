@@ -1,0 +1,12 @@
+<div id='map'
+    data-api="<%= ENV['MAP_API_KEY'] %>",
+    data-userid="<%= current_user.id %>",
+    data-guestid="<%= @user.id %>",
+  >
+  </div>
+
+<% if current_user == @user %>
+  <%= javascript_pack_tag "mapbox/map_initiate" %>
+<% else %>
+  <%= javascript_pack_tag "mapbox/guest_map" %>
+<% end %>

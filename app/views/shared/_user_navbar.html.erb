@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent15"
+    aria-controls="navbarSupportedContent15" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent15">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <%= link_to "My Places", user_path(current_user), class: "nav-link" %>
+        </li>
+        <li class="nav-item active">
+          <%= link_to "GlobalMap", global_map_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item active">
+        <div class="dropdown">
+          <div class="nav-link text-light" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            How To Use
+          </div>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <%= render "/shared/how_to_use_window" %>
+          </div>
+        </div>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav ml-auto">
+        <li class="nav-item active dropdown dropdown-toggle dropleft text-light btn" type="button" id="dropdownMenuButton"
+         data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            <%= @user.username %>
+          <div class="dropdown-menu" id="dropdownMenuButton">
+            <div class="card card-body">
+              <%= render "shared/user_page" %>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item active">
+          <%= link_to "Logout", destroy_user_session_path, :method => :delete,
+           :data => { :no_turbolink => true }, class: "nav-link" %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

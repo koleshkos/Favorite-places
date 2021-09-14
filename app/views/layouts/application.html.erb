@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FavoritePlaces</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
+  </head>
+
+  <body>
+    <% if user_signed_in? %>
+      <%= render "shared/user_navbar" %>
+    <% else %>
+      <header id="header">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <div class="container">
+            <ul class="navbar-nav mr-auto">
+              <a class="navbar-brand" href="/">
+                <%= image_tag("logo.png", alt: "Logo", weight: "30", height: "25", class: "d-inline-block align-text-top") %>
+                FavoritePlaces</a>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent15"
+              aria-controls="navbarSupportedContent15" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent15">
+                  <%= link_to 'Login', new_user_session_path, class: 'btn btn-outline-primary me-2 mr-2'%>
+                  <%= link_to 'Register', new_user_registration_path, class: 'btn btn-outline-success'%>
+              </div>
+            </ul>
+          </div>
+        </nav>
+      </header>
+    <% end %>
+
+    <% if flash[:notice]%>
+      <div class="alert alert-info"><%= notice %></div>
+    <% end %>
+     <% if flash[:alert]%>
+      <div class="alert alert-dark"><%= alert %></div>
+    <% end %>
+
+    <%= yield %>
+
+  <footer class="fixed-bottom bg-dark">
+      <div class="container">
+        <div class="d-flex justify-content-center">
+          <div class="footer-left mt-2 mb-2">
+            <span class="text-decoration-none text-white-50 me-2 mr-3" href="#">DSK Team &copy; <i>Epam Training Center</i>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

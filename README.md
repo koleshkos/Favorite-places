@@ -8,7 +8,7 @@ This app was created during Ruby on Rails training ([**RUBYLNIK**](https://githu
 
 *Welcome to an endless world of your memories:*
 
-[👉 **Favorite Places Web App**](https://favorite-places-dsk.herokuapp.com)
+[👉 **Favorite Places Web App**](https://favorite-places-2021.herokuapp.com/)
 
 ## Tools
 
@@ -22,7 +22,7 @@ This app was created during Ruby on Rails training ([**RUBYLNIK**](https://githu
 - **Rspec** - unit tests
 - **Rubocop** - code style guard
 - **Github Actions** - CI (*RSpec* + *Rubocop* tests) [![Rails tests](https://github.com/RUBYLNIK-training-center/favorite-places-2021/actions/workflows/test.yml/badge.svg)](https://github.com/RUBYLNIK-training-center/favorite-places-2021/actions/workflows/test.yml)
-- **Heroku** - deploy ([👉 **Favorite Places Web App**](https://favorite-places-dsk.herokuapp.com))
+- **Heroku** - deploy ([👉 **Favorite Places Web App**](https://favorite-places-2021.herokuapp.com/))
 
 ## Versions
 
